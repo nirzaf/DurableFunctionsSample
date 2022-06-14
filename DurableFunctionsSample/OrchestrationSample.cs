@@ -1,16 +1,13 @@
 using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
-using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Azure.Storage.Blob;
 using Microsoft.Azure.WebJobs;
 using Microsoft.Azure.WebJobs.Extensions.DurableTask;
 using Microsoft.Azure.WebJobs.Extensions.Http;
-using Microsoft.Azure.WebJobs.Host;
 using Microsoft.Extensions.Logging;
 
 namespace DurableFunctionsSample
@@ -28,10 +25,10 @@ namespace DurableFunctionsSample
             {
                 throw new ArgumentException($"Failed to contact endpoint: {endpointResponse.StatusCode}: {endpointResponse.Content}");
             }
-            log.LogInformation("Information retrieved from endpoint = {EndpointResponseContent}.", endpointResponse.Content);
+            log.LogInformation("Information retrieved from endpoint = {EndpointResponseContent}", endpointResponse.Content);
 
             string[] words = endpointResponse.Content.Split(" ");
-            log.LogInformation("Words count = {Count}.", words.Count());
+            log.LogInformation("Words c{name}ount = {Count}", "ARG0", words.Count());
 
             var entityId = new EntityId("OrchestrationSample_Counter", "charCounter");
              context.SignalEntity(entityId, "reset");
@@ -51,13 +48,13 @@ namespace DurableFunctionsSample
         public static async Task LogBlobAsync([ActivityTrigger] string name, [Blob("sample-blob/{name}", FileAccess.Write)] CloudBlockBlob blobStream, ILogger log)
         {
             await blobStream.UploadTextAsync(DateTime.UtcNow.ToString());
-            log.LogInformation($"Blob Created {DateTime.UtcNow}.");
+            log.LogInformation("Blob Created {UtcNow}", DateTime.UtcNow);
         }
 
         [FunctionName("OrchestrationSample_Counter")]
         public static void Counter([EntityTrigger] IDurableEntityContext ctx, ILogger log)
         {
-            log.LogInformation($"Entity operation= {ctx.OperationName}.");
+            log.LogInformation("Entity operation= {CtxOperationName}", ctx.OperationName);
 
             switch (ctx.OperationName.ToLowerInvariant())
             {
@@ -83,8 +80,8 @@ namespace DurableFunctionsSample
             object endpoint = qs.Get("endpointUri");
 
             string instanceId = await starter.StartNewAsync("OrchestrationSample", endpoint);
-            log.LogInformation($"Started orchestration with ID = '{instanceId}'.");
-            log.LogInformation($"Endpoint = '{endpoint}'.");
+            log.LogInformation("Started orchestration with ID = \'{InstanceId}\'", instanceId);
+            log.LogInformation("Endpoint = \'{Endpoint}\'", endpoint);
 
             return starter.CreateCheckStatusResponse(req, instanceId);
         }
