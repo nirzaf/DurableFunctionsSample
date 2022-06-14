@@ -3,16 +3,61 @@
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
+  <component name="ChangeListManager">
+    <list default="true" id="620d78f5-f9df-4f36-8d28-e467ea5ed3d0" name="Changes" comment="            string instanceId = await starter.StartNewAsync(&quot;OrchestrationSample&quot;, endpoint);&#10;            log.LogInformation(&quot;Started orchestration with ID = \'{InstanceId}\'&quot;, instanceId);&#10;            log.LogInformation(&quot;Endpoint = \'{Endpoint}\'&quot;, endpoint);" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ProjectId" id="2AZzIAxwsf97rU9yc1rclrPCkYl" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;settings.editor.selected.configurable&quot;: &quot;application.passwordSafe&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "settings.editor.selected.configurable": "application.passwordSafe",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
+  <component name="RunManager" selected="Azure Functions host.DurableFunctionsSample">
+    <configuration name="DurableFunctionsSample" type="AzureFunctionsHost" factoryName="Azure Functions host">
+      <option name="EXE_PATH" value="" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="PROJECT_PATH" value="$PROJECT_DIR$/DurableFunctionsSample/DurableFunctionsSample.csproj" />
+      <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
+      <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
+      <option name="PROJECT_WORKING_DIRECTORY_TRACKING" value="1" />
+      <option name="PROJECT_KIND" value="None" />
+      <option name="PROJECT_TFM" value="" />
+      <option name="FUNCTION_NAMES" value="" />
+      <method v="2">
+        <option name="BuildFunctionsProject" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DurableFunctionsSample: DurableFunctionsSampleTVA - Zip Deploy" type="DotNetMsBuildPublish" factoryName="Publish to IIS">
+      <riderPublish publish_profile="DurableFunctionsSampleTVA - Zip Deploy.pubxml" pubxml_path="$PROJECT_DIR$/DurableFunctionsSample/Properties/PublishProfiles/DurableFunctionsSampleTVA - Zip Deploy.pubxml" uuid_high="-4020738256068194989" uuid_low="-5184484869711960352" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration>C:\Users\Fazrin\AppData\Roaming\Subversion</configuration>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="            string endpoint = context.GetInput&lt;object&gt;().ToString();&#10;            var request = new DurableHttpRequest(HttpMethod.Get, new Uri(endpoint));&#10;            DurableHttpResponse endpointResponse = await context.CallHttpAsync(request);" />
+    <MESSAGE value="            string instanceId = await starter.StartNewAsync(&quot;OrchestrationSample&quot;, endpoint);&#10;            log.LogInformation(&quot;Started orchestration with ID = \'{InstanceId}\'&quot;, instanceId);&#10;            log.LogInformation(&quot;Endpoint = \'{Endpoint}\'&quot;, endpoint);" />
+    <option name="LAST_COMMIT_MESSAGE" value="            string instanceId = await starter.StartNewAsync(&quot;OrchestrationSample&quot;, endpoint);&#10;            log.LogInformation(&quot;Started orchestration with ID = \'{InstanceId}\'&quot;, instanceId);&#10;            log.LogInformation(&quot;Endpoint = \'{Endpoint}\'&quot;, endpoint);" />
   </component>
 </project>
