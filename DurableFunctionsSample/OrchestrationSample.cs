@@ -78,11 +78,9 @@ namespace DurableFunctionsSample
         {
             var qs = req.RequestUri.ParseQueryString();
             object endpoint = qs.Get("endpointUri");
-
             string instanceId = await starter.StartNewAsync("OrchestrationSample", endpoint);
             log.LogInformation("Started orchestration with ID = \'{InstanceId}\'", instanceId);
             log.LogInformation("Endpoint = \'{Endpoint}\'", endpoint);
-
             return starter.CreateCheckStatusResponse(req, instanceId);
         }
     }
